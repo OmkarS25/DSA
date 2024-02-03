@@ -1,4 +1,6 @@
 // M1
+#include<iostream>
+#include <vector>
 class Solution
 {
 public:

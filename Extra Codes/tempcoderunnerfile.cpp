@@ -1,0 +1,1 @@
+if (n==2) return k + k*(k-1);

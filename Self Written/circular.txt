@@ -1,0 +1,293 @@
+// #include <iostream>
+// using namespace std;
+
+// class Node {
+// public:
+//     int val;
+//     Node *next;
+
+//     Node(int data)
+//     {
+//         val = data;
+//         next = NULL;
+//     }
+// };
+
+// Node *head = NULL,*tail = NULL;
+// // Initialize head and tail to NULL initially.
+
+// int getl(){
+//     int count = 1;
+//     Node *temp;
+//     temp = head;
+//     while (temp->next != head)
+//     {
+//         count++;
+//         temp = temp->next;
+//     }
+//     return count;
+// }
+
+// void create() {
+//     int n, val;
+//     cout << "Enter the number of nodes: ";
+//     cin >> n;
+
+//     if (n <= 0) {
+//         cout << "Invalid number of nodes" << endl;
+//         return;
+//     }
+
+//     for (int i = 0; i < n; i++) {
+//         cout << "Enter the data for node " << i + 1 << ": ";
+//         cin >> val;
+
+//         Node* new_node = new Node(val);
+
+//         if (head == NULL) {
+//             head = new_node;
+//             tail = new_node;
+//             tail->next = head; // Make it circular
+//         } else {
+//             new_node->next = head; // Point new_node to the head
+//             tail->next = new_node; // Make the current tail point to new_node
+//             tail = new_node; // Update tail to new_node
+//         }
+//     }
+// }
+
+// void insertAtStart(int data)
+// {
+
+//     Node *new_node = new Node(data);
+//     if (head == NULL)
+//     {
+//         head = new_node;
+//         new_node->next = head; // circular linkes list
+//         return;
+//     }
+
+//     Node *tail = head;
+//     while (tail->next != head)
+//     {
+//         tail = tail->next;
+//     }
+//     // now tail is pointing to the last node
+
+//     tail->next = new_node;
+//     new_node->next = head;
+//     head = new_node;
+// }
+
+// void insertAtEnd(int data)
+// {
+
+//     Node *new_node = new Node(data);
+//     if (head == NULL)
+//     {
+//         head = new_node;
+//         new_node->next = head; // circular linkes list
+//         return;
+//     }
+
+//     Node *tail = head;
+//     while (tail->next != head)
+//     {
+//         tail = tail->next;
+//     }
+//     // now tail is pointing to the last node
+
+//     tail->next = new_node;
+//     new_node->next = head;
+// }
+// void insertatspecificpoint(int val)
+// {
+//     Node *newnode, *temp;
+//     int loc, i;
+//     cout << "Enter the location where you want to add node :";
+//     cin >> loc;
+//     int l = getl();
+//     if (loc < 1 || loc > l)
+//     {
+//         cout << "Invalid location" << endl;
+//     }
+//     else if (loc == 1)
+//     {
+//         void insertAtStart(int val);
+//     }
+
+//     else
+//     {
+//         Node *new_node = new Node(val);
+
+//         newnode->next = 0;
+//         temp = head;
+
+//         for (i = 1; i < loc - 1; i++)
+//         {
+//             temp = temp->next;
+//         }
+//         cout << "Enter the data :";
+//         cin >> newnode->val;
+//         newnode->next = temp->next;
+//         temp->next = newnode;
+//     }
+// }
+
+// void deleteAtStart()
+// {
+//     if (head == NULL)
+//     {
+//         return;
+//     }
+
+//     Node *temp = head;
+//     Node *tail = head;
+//     while (tail->next != head)
+//     {
+//         tail = tail->next;
+//     }
+
+//     head = head->next;
+//     tail->next = head;
+//     free(temp);
+// }
+
+// void deleteatend()
+// {
+//     Node *temp, *ptr;
+//     temp = head;
+//     if (head == 0)
+//     {
+//         cout << "List is empty" << endl;
+//     }
+//     else if (head == tail)
+//     {
+//         head = tail = 0;
+//         free(temp);
+//     }
+
+//     else
+//     {
+//         while (temp->next != head)
+//         {
+//             ptr = temp;
+//             temp = temp->next;
+//         }
+//         ptr->next = head;
+//         tail = ptr;
+//         free(temp);
+//     }
+// }
+
+// void deleteatspecificlocation()
+// {
+//     Node *temp, *ptr;
+//     int loc, n, i;
+//     cout << "Enter the location :";
+//     cin >> loc;
+//     int l = getl();
+//     ptr = head;
+//     if (loc < 1 || loc > l)
+//     {
+//         cout << "Invalid Location" << endl;
+//     }
+//     else if (loc == 1)
+//     {
+//         deleteAtStart();
+//     }
+//     else if (loc == l)
+//     {
+//         deleteatend();
+//     }
+//     else
+//     {
+//         for (i = 1; i < loc - 1; i++)
+//         {
+//             ptr = ptr->next;
+//         }
+//         temp = ptr->next;
+//         ptr->next = temp->next;
+//         free(temp);
+//     }
+// }
+// void display() {
+//     if (head == NULL) {
+//         cout << "Circular Linked List is empty" << endl;
+//         return;
+//     }
+
+//     Node* current = head;
+
+//     do {
+//         cout << current->val << " -> ";
+//         current = current->next;
+//     } while (current != head);
+
+//     cout << "NULL" << endl;
+// }
+// int main(){
+
+//     int choice;
+//     do
+//     {
+//         cout << "\n\n\t\tMENU Circular Linked List\n\n\n";
+//         cout << "Enter the operation" << endl;
+//         cout << endl;
+//         cout << "1. Create linked list" << endl;
+//         cout << "2. Insert at Start" << endl;
+//         cout << "3. Insert at end" << endl;
+//         cout << "4. Insert at specific location" << endl;
+//         cout << "5. Delete from begining" << endl;
+//         cout << "6. Delete from end" << endl;
+//         cout << "7. Delete at specific position" << endl;
+//         cout << "8. Display" << endl;
+//         cout << "9. Exit" << endl;
+//         cout << "Enter your choice : ";
+//         cin >> choice;
+
+//         switch (choice)
+//         {
+//         case 1:
+//             create();
+//             break;
+//         case 2:
+//             int val_start;
+//             cout << "Enter value to insert: ";
+//             cin >> val_start;
+//             insertAtStart(val_start);
+//             break;
+//         case 3:
+//             int val_end;
+//             cout << "Enter value to End: ";
+//             cin >> val_end;
+//             insertAtEnd(val_end);
+//             break;
+//         case 4:
+//             int val;
+//             cout<<"Enter val: ";
+//             cin>>val;
+//             void insertatspecificpoint(int val);
+//             break;
+//         case 5:
+//             void deleteAtStart();
+//             break;
+//         case 6:
+//             void deleteatend();
+//             break;
+//         case 7:
+//             void deleteatspecificlocation();
+//             break;
+//         case 8:
+//             display();
+//             break;
+//         case 9:
+//             exit(0);
+//             break;
+//         default:
+//             cout << "Invalid input" << endl;
+//         }
+//     }while(choice !=9);
+
+//     return 0;
+// }

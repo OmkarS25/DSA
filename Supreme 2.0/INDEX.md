@@ -20,12 +20,12 @@ This repository contains the code and documentation for the DSA Supreme 2.0 cour
         color: #ffffff;
         text-decoration: none;
       }
-      tr:nth-child(odd) {
+      /* tr:nth-child(odd) {
         background-color: #17d21da1;
-      }
-      tr:nth-child(even) {
+      } */
+      /* tr:nth-child(even) {
         background-color: #1771d2a1;
-      }
+      } */
       th:hover {
         /* background-color: #07d9e8bc; */
         /* background-color: #17d31e5f; */

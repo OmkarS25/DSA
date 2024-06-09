@@ -77,3 +77,71 @@ During this week, we explored more advanced patterns using conditions and loops.
 ## Week 3
 
 [Add description for Week 3 here]
+
+## Week 4
+
+[Add description for Week 4 here]
+
+## Week 5
+
+[Add description for Week 5 here]
+
+## Week 6
+
+[Add description for Week 6 here]
+
+## Week 7
+
+[Add description for Week 7 here]
+
+## Week 8
+
+[Add description for Week 8 here]
+
+## Week 9
+
+[Add description for Week 9 here]
+
+## Week 10
+
+[Add description for Week 10 here]
+
+## Week 11
+
+[Add description for Week 11 here]
+
+## Week 12
+
+[Add description for Week 12 here]
+
+## Week 13
+
+[Add description for Week 13 here]
+
+## Week 14
+
+[Add description for Week 14 here]
+
+## Week 15
+
+[Add description for Week 15 here]
+
+## Week 16
+
+[Add description for Week 16 here]
+
+## Week 17
+
+[Add description for Week 17 here]
+
+## Week 18
+
+[Add description for Week 18 here]
+
+## Week 19
+
+[Add description for Week 19 here]
+
+## Week 20
+
+[Add description for Week 20 here]

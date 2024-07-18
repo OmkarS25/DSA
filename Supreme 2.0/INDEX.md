@@ -5,7 +5,7 @@ This repository contains the code and documentation for the DSA Supreme 2.0 cour
 
 # Table of Contents
 <table>
-  <!-- <style>
+  <style>
       table {
         width: 100%;
         border-collapse: collapse;
@@ -20,18 +20,18 @@ This repository contains the code and documentation for the DSA Supreme 2.0 cour
         color: #ffffff;
         text-decoration: none;
       }
-      /* tr:nth-child(odd) {
+      tr:nth-child(odd) {
         background-color: #17d21da1;
-      } */
-      /* tr:nth-child(even) {
+      }
+      tr:nth-child(even) {
         background-color: #1771d2a1;
-      } */
+      }
       th:hover {
         /* background-color: #07d9e8bc; */
         /* background-color: #17d31e5f; */
         background-color: #4CAF50;
       }
-    </style> -->
+    </style>
     <tr>
       <th><a href="#week-1">Week 1</a></th>
       <th><a href="#week-2">Week 2</a></th>

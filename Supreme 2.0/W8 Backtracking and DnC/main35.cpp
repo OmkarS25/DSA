@@ -15,6 +15,8 @@ void printPermutation(string &str, int index) {
 		printPermutation(str, index+1);
 		//backtracking
 		swap(str[index], str[j]);
+		// Ye karne ki jarut iss liye padi kyuki humne str pass by reference kiya hai.
+		// So, jab hum recursion ke baad wapas aate hai toh hume wapas original string chahiye.
 	}
 	
 }

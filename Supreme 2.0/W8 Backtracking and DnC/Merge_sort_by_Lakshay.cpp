@@ -1,6 +1,8 @@
+#include<bits/stdc++.h>
+using namespace std;
 class Solution {
 public:
-    void merge(vector<int>&v, vector<int>&temp, int start, int mid, int end){
+    void merge(vector<int>& v, vector<int>& temp, int start, int mid, int end){
         int i = start, j = mid + 1;
         // first array = start -> mid
         // second array = mid + 1 -> end
@@ -28,7 +30,7 @@ public:
         }
     }
 
-    void mergeSort(vector<int>&v, vector<int>&temp, int start, int end){
+    void mergeSort(vector<int>& v, vector<int>& temp, int start, int end){
         if(start >= end) return;
 
         int mid = (start + end) / 2;
@@ -41,8 +43,18 @@ public:
     }
 
     vector<int> sortArray(vector<int>& nums) {
-        vector<int>temp(nums.size(), 0);
+        vector<int> temp(nums.size(), 0);
         mergeSort(nums, temp, 0, nums.size() - 1);
         return nums;
     }
 };
+
+int main(){
+    Solution s;
+    vector<int> v = {10, 7, 8, 9, 1, 5};
+    vector<int> res = s.sortArray(v);
+    for(auto i: res){
+        cout << i << " ";
+    }
+    return 0;
+}

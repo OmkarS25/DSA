@@ -1,5 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
+// Leetcode 912
+// Here, we are trying to avoid the new and delete operations.
+// So, we are passing the temp array as a parameter to the function.
 class Solution {
 public:
     void merge(vector<int>& v, vector<int>& temp, int start, int mid, int end){

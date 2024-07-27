@@ -7,62 +7,62 @@
 *.o
 *.so
 
-# Packages #
-############
-# it's better to unpack these files and commit the raw source
-# git has its own built in compression methods
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
+# # Packages #
+# ############
+# # it's better to unpack these files and commit the raw source
+# # git has its own built in compression methods
+# *.7z
+# *.dmg
+# *.gz
+# *.iso
+# *.jar
+# *.rar
+# *.tar
+# *.zip
 
-# Logs and databases #
-######################
-*.log
-*.sql
-*.sqlite
+# # Logs and databases #
+# ######################
+# *.log
+# *.sql
+# *.sqlite
 
-# OS generated files #
-######################
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-# Logs
-logs
-*.log
+# # OS generated files #
+# ######################
+# .DS_Store
+# .DS_Store?
+# ._*
+# .Spotlight-V100
+# .Trashes
+# ehthumbs.db
+# Thumbs.db
+# # Logs
+# logs
+# *.log
 
-# Build files generated from Parcel
-dist
+# # Build files generated from Parcel
+# dist
 
-# Dependency directories
-node_modules/
+# # Dependency directories
+# node_modules/
 
-# Optional npm cache directory
-.npm
+# # Optional npm cache directory
+# .npm
 
-# Optional eslint cache
-.eslintcache
+# # Optional eslint cache
+# .eslintcache
 
-# dotenv environment variables file
-.env
-.env.test
+# # dotenv environment variables file
+# .env
+# .env.test
 
-# parcel-bundler cache (https://parceljs.org/)
-.parcel-cache
+# # parcel-bundler cache (https://parceljs.org/)
+# .parcel-cache
 
-.DS_Store
+# .DS_Store
 
-# Additional file extensions to exclude
-######################
-*.pdf
-*.docx
-*.xlsx
-*.pptx
+# # Additional file extensions to exclude
+# ######################
+# *.pdf
+# *.docx
+# *.xlsx
+# *.pptx

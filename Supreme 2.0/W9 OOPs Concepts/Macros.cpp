@@ -1,8 +1,8 @@
 #include<iostream>
 using namespace std;
 
-#define PI 3.14159465
-#define MAXX(x,y) (x > y ? x : y)
+#define PI 3.14159465 // define is a preprocessor directive
+#define MAXX(x,y) (x > y ? x : y) // Ternary Operator as Macro
 
 float circleArea(float r){
     return PI*r*r;

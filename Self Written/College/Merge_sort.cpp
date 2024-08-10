@@ -50,7 +50,7 @@ void bubbleSort(vector<int>& arr){
 
 int main(){
     vector<int> a,b; 
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 1000; i++) {
         int num = rand();
         a.push_back(num);
         b.push_back(num);

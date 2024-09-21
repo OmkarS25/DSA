@@ -1,36 +1,50 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void heapify(vector<int>& arr, int n, int i){
-    int largest = i;
-    int left = 2*i + 1;
-    int right = 2*i + 2;
-    if(left < n && arr[left] > arr[largest]){
-        largest = left;
-    }
-    if(right < n && arr[right] > arr[largest]){
-        largest = right;
-    }
-    if(largest != i){
-        swap(arr[i], arr[largest]);
-        heapify(arr, n, largest);
-    }
-}
+class Sorting{
+public:
+    void heapify(vector<int> arr, int n, int i) { 
+        int temp, maximum = i, left_index = 2 * i + 1, right_index = 2 * i + 2; 
 
-void heap_sort(vector<int>& arr){
-    int n = arr.size();
-    for(int i = n/2-1; i >= 0; i--){
-        heapify(arr, n, i);
+        // if left index value is grater than the current index value 
+        if (left_index < n && arr[left_index] > arr[maximum]) maximum = left_index; 
+
+        // if right index value is grater than the current index value 
+        if (right_index < n && arr[right_index] > arr[maximum]) maximum = right_index; 
+
+        // checking if we needed swaping the elements or not 
+        if (maximum != i) { 
+            temp = arr[i]; 
+            arr[i] = arr[maximum]; 
+            arr[maximum] = temp; 
+            heapify(arr, n, maximum); 
+        } 
     }
-    for(int i = n-1; i > 0; i--){
-        swap(arr[0], arr[i]);
-        heapify(arr, i, 0);
+
+    void heap_sort(vector<int> arr, int n) { 
+        int i, temp; 
+        // performing heapify on the non leaf nodes so n/2 - 1 to 0 are the non leaf nodes 
+        for (i = n / 2 - 1; i >= 0; i--) { 
+            heapify(arr, n, i); 
+        } 
+        // the current array is changed to max heap 
+        for (i = n - 1; i > 0; i--) { 
+            temp = arr[0]; 
+            arr[0] = arr[i]; 
+            arr[i] = temp; 
+            heapify(arr, i, 0); 
+        } 
     }
-}
+};
 
 int main(){
     vector<int> arr = {10, 7, 8, 9, 1, 5};
-    heap_sort(arr);
+    for(int a: arr){
+        cout << a << " ";
+    }
+    cout << endl;
+    Sorting obj;
+    obj.heap_sort(arr, arr.size());
     for(int a: arr){
         cout << a << " ";
     }

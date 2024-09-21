@@ -1,0 +1,40 @@
+
+1. https://leetcode.com/problems/two-sum/
+
+2. https://leetcode.com/problems/palindrome-number/
+
+3. https://leetcode.com/problems/valid-parentheses/
+
+4. https://leetcode.com/problems/merge-two-sorted-lists/
+
+5. https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+
+6. https://leetcode.com/problems/remove-element/
+
+7. https://leetcode.com/problems/plus-one/
+
+8. https://leetcode.com/problems/rotate-array/
+
+9. https://leetcode.com/problems/move-zeroes/
+
+10. https://leetcode.com/problems/binary-search/
+
+11. https://leetcode.com/problems/reverse-linked-list/
+
+12. https://leetcode.com/problems/delete-node-in-a-linked-list/
+
+13. https://leetcode.com/problems/power-of-two/
+
+14. https://leetcode.com/problems/hamming-distance/
+
+15. https://leetcode.com/problems/reverse-integer/
+
+16. https://leetcode.com/problems/sort-colors/
+
+17. https://leetcode.com/problems/spiral-matrix/
+
+18. https://leetcode.com/problems/fibonacci-number/
+
+19. https://leetcode.com/problems/search-insert-position/
+
+20. https://leetcode.com/problems/reverse-string/

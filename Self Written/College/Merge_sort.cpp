@@ -49,21 +49,33 @@ void bubbleSort(vector<int>& arr){
 }
 
 int main(){
-    vector<int> a,b; 
-    for (int i = 0; i < 1000; i++) {
+    vector<int> a,b;
+    int items = 1000; 
+    for (int i = 0; i < items; i++) {
         int num = rand();
         a.push_back(num);
         b.push_back(num);
     }
-    chrono::high_resolution_clock::time_point start_time_merge = chrono::high_resolution_clock::now();
-    sort_array(a);
-    chrono::high_resolution_clock::time_point end_time_merge = chrono::high_resolution_clock::now();
-    chrono::duration<double, nano> runtime_merge = end_time_merge - start_time_merge;
-    cout << "\n" << "Runtime: " << runtime_merge.count() << " nanoseconds\n";
-    chrono::high_resolution_clock::time_point start_time_bubble = chrono::high_resolution_clock::now();
-    bubbleSort(b);
-    chrono::high_resolution_clock::time_point end_time_bubble = chrono::high_resolution_clock::now();
-    chrono::duration<double, nano> runtime = end_time_bubble - start_time_bubble;
-    cout << "\n" << "Runtime: " << runtime.count() << " nanoseconds";
+    cout << "\n" << "No. of items: " << items << "\n";
+
+    // Merge Sort
+    {
+        chrono::high_resolution_clock::time_point start_time_merge = chrono::high_resolution_clock::now();
+        sort_array(a);
+        chrono::high_resolution_clock::time_point end_time_merge = chrono::high_resolution_clock::now();
+        chrono::duration<double, nano> runtime_merge = end_time_merge - start_time_merge;
+        cout<<"Merge Sort: ";
+        cout << "\n" << "Runtime: " << runtime_merge.count() << " nanoseconds\n";
+    }
+
+    // Bubble Sort
+    {
+        chrono::high_resolution_clock::time_point start_time_bubble = chrono::high_resolution_clock::now();
+        bubbleSort(b);
+        chrono::high_resolution_clock::time_point end_time_bubble = chrono::high_resolution_clock::now();
+        chrono::duration<double, nano> runtime = end_time_bubble - start_time_bubble;
+        cout<<"Bubble Sort: ";
+        cout << "\n" << "Runtime: " << runtime.count() << " nanoseconds";
+    }
     return 0;
 }

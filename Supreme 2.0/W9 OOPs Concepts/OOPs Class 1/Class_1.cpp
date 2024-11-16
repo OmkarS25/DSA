@@ -47,18 +47,6 @@ public:
         cout << "Student paremeterized ctor w/o gf called" << endl;
     }
 
-    // getter / setter
-    string getGfName()
-    {
-        return gf;
-        // return this->gf;
-    }
-
-    void setGfName(string gf)
-    {
-        this->gf = gf;
-    }
-
     void study()
     {
         cout << "studying" << endl;

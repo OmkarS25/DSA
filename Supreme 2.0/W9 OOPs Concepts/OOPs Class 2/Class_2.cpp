@@ -54,6 +54,12 @@ public:
         cout << "Student paremeterized ctor w/o gf called" << endl;
     }
 
+    // Another way to write the ctor
+    Student(int m_id, int m_agf, bool m_present, string m_name) : id(m_id), age(m_agf), present(m_present), name(m_name)
+    {
+        cout << "Student paremeterized ctor which is written in a different way of initalizing." << endl;
+    }
+
     // copy constructor or ctor
     Student(const Student &srcobj)
     {
@@ -75,6 +81,8 @@ public:
 
     void setGfName(string gf)
     {
+        // authentication like dost, mummy, papa, yourself.
+        // Ya toh gf ka name female hi hona chaiye.
         this->gf = gf;
     }
 
@@ -130,4 +138,5 @@ int main()
     cout << s1.getGfName() << endl;
 
     return 0;
+    
 }

@@ -88,7 +88,7 @@ int main()
     Student *s4 = new Student(3, 34, 1, "Chintu", 6);
     cout << s4->name << endl;
     cout << (*s4).name << endl;
-
+    
     delete s4; // no LEAK
 
     // s1.name = "Goli";

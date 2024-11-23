@@ -33,10 +33,10 @@ public:
     // }
 
     // init list
-    Vector(int x, int y) : x(x), y(y) {}
+    Vector(int _x, int _y) : x(_x), y(_y) {}
 
     // op overloading
-    void operator+(const Vector &src)
+    void operator+=(const Vector &src)
     {
         // this would point to v1
         // src would be ref to v2
@@ -45,6 +45,16 @@ public:
 
         this->x += src.x;
         this->y += src.y;
+    }
+
+    Vector operator+(const Vector &src)
+    {
+        // this would point to v1
+        // src would be ref to v2
+        // this->x = this->x + src.x;
+        // this->y = this->y + src.y;
+
+        return {this->x + src.x, this->y + src.y};
     }
 
     void operator++()
@@ -68,9 +78,12 @@ int main()
 
     Vector v1(2, 3);
     Vector v2(4, 5);
+    Vector v3 = v1 + v2;
+    v3.display();
 
-    // v1 + v2;
-    // v1 - v2;
+    v1 += v2;
+    // v1 - v2; same can be done as v1.operator-(v2);
+    v1.display();
 
     ++v1;
     // addtion answer should be stored in v1;

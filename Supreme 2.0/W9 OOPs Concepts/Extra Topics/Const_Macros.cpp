@@ -99,6 +99,15 @@ public:
         // This is not recommended to use but can be used for degugging purposes.
         return a;
     }
+
+    // diff bw int const writeA() and int writeA() const is that
+    // in int const writeA() you can't change the value of width
+    // but in int writeA() const you can change the value of width
+    // as the function is const.
+
+    ~abc(){
+        delete y;
+    }
 };
 
 void printAll(const abc& obj){

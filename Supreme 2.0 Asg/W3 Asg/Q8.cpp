@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
-  public:
+public:
     // Function to return the position of the first repeating element.
     int firstRepeatedByVector(int arr[], int n) {
         vector<int> twice(1000001,0);
@@ -27,6 +27,10 @@ class Solution {
     int firstRepeatedByHashMap(int arr[], int n){
         unordered_map<int,int> hash;
         int minindex = INT_MAX;
-        if()
+        for(int i=0; i<n; i++){
+            if(hash[arr[i]]) minindex = min(minindex, hash[arr[i]]);
+            
+        }
+        return minindex;
     }
 };

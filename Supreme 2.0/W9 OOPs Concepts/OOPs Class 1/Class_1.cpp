@@ -85,11 +85,11 @@ int main()
     // cout << s3.name << endl;
 
     // // alocating on heap
-    // Student *s4 = new Student(3, 34, 1, "Chintu", 6);
-    // cout << s4->name << endl;
-    // cout << (*s4).name << endl;
+    Student *s4 = new Student(3, 34, 1, "Chintu", 6);
+    cout << s4->name << endl;
+    cout << (*s4).name << endl;
 
-    // delete s4; // no LEAK
+    delete s4; // no LEAK
 
     // s1.name = "Goli";
     // s1.age = 12;

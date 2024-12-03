@@ -20,3 +20,7 @@ int main()
     // cout<<c<<endl;
     return 0;
 }
+
+// How to compile this file?
+// g++ -o runnablefile main.cpp MyString.cpp
+// ./runnablefile

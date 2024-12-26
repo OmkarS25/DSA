@@ -21,6 +21,7 @@ public:
         top1++;
         if (abs(top2 - top1) == 1)
         {
+            // No space available
             cout << "Stack OverFlow!" << endl;
             return;
         }
@@ -32,6 +33,7 @@ public:
         top2--;
         if (abs(top2 - top1) == 1)
         {
+            // No space available
             cout << "Stack OverFlow!" << endl;
             return;
         }
@@ -42,6 +44,7 @@ public:
     {
         if (arr[top1] == -1)
         {
+            // No element to pop
             cout << "Stack underFlow!" << endl;
             return;
         }
@@ -52,6 +55,7 @@ public:
     {
         if (arr[top2] == size)
         {
+            // No element to pop
             cout << "Stack Underflow!" << endl;
             return;
         }
@@ -67,7 +71,7 @@ public:
         return arr[top1];
     }
 };
-// check for redundant bracjet
+// check for redundant brackets
 bool checkRedundantBracket(string s)
 {
     stack<char> st;
@@ -79,7 +83,7 @@ bool checkRedundantBracket(string s)
             st.push(ch);
         else if (ch == ')')
         {
-            int operatorCount = 0;
+            int operatorCount = 0; // Can also be done using a boolean variable
             while (st.size() != 0 && st.top() != '(')
             {
                 char temp = st.top();
@@ -87,11 +91,16 @@ bool checkRedundantBracket(string s)
                     operatorCount++;
                 st.pop();
             }
+            // Yaha tabhi pohochonge jab aap ke 
+            // stack ke top pe koi opening bracket hoga
             st.pop();
             if (operatorCount == 0)
                 return 1;
         }
     }
+    // Agar yaha tak pohoch gaye toh 
+    // iska matlab hai ki har bracket ke pair ke 
+    // beech koi operator pakka mila hoga
     return 0;
 }
 int main()

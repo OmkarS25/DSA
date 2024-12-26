@@ -1,5 +1,48 @@
 #include <bits/stdc++.h>
 using namespace std;
+
+// Implementing stack with a fuctionality of getting minimum element in O(1) time
+class MinStack{
+    vector<pair<int,int>> st;
+
+    MinStack(){}
+
+    void push(int val){
+        // In short form
+        // if(st.empty()){
+        //     st.push_back({val,val});
+        // }else{
+        //     st.push_back({val,min(val,st.back().second)});
+        // }
+
+        if(st.empty()){
+            pair<int,int> p;
+            p.first=val;
+            p.second=val;
+            st.push_back(p);
+        }else{
+            pair<int,int> p;
+            p.first=val;
+            p.second=min(val,st.back().second);
+            st.push_back(p);
+        }
+    }
+
+    void pop(){
+        st.pop_back();
+    }
+
+    int top(){
+        pair<int,int> rightMostPair = st.back();
+        return rightMostPair.first;
+    }
+
+    int getMin(){
+        pair<int,int> rightMostPair = st.back();
+        return rightMostPair.second;
+    }
+};
+
 // next smaller element
 vector<int> nextSmaller(int *arr, int n)
 {
@@ -57,9 +100,12 @@ int main()
     cout << endl;
     return 0;
 }
+
+
+
+
 // Largest rectangle in histogram
-class Solution
-{
+class Solution{
 public:
     vector<int> nextSmaller(vector<int> &arr, int n)
     {
@@ -105,6 +151,11 @@ public:
         // int n=heights.size();
         // if(n==1)return heights[0];
         // vector<int>  leftToRight=prevSmaller(heights,n);
+        // for(int i=0; i<heights.size(); i++){
+        //     if(next[i]==-1){
+        //         next[i]=heights.size();
+        //     }
+        // }
         // vector<int> rightToLeft=nextSmaller(heights,n);
         // // rev krdo
         // // reverse(rightToLeft.begin(),rightToLeft.end());
@@ -123,9 +174,9 @@ public:
 
         for (int i = 0; i < heights.size(); i++)
         {
-            int j = i;
-            int k = i;
-            int a = 1; // Reset 'a' for each histogram bar
+            int j = i; // Previous smaller element index
+            int k = i; // Next smaller element index
+            int a = 1; // Reset 'a' for each histogram bar as it will be the minimum width
 
             // Move left while the bar is higher
             while (j >= 0 && heights[j] >= heights[i])
@@ -146,5 +197,35 @@ public:
         }
 
         return area;
+    }
+};
+
+
+// The Upper solution is brute force solution
+// and is gives the wrong answer as the width is not calculated properly
+// The below solution is the correct solution
+
+class Solution {
+public:
+    int largestRectangleArea(vector<int>& heights) {
+        stack<int> st;
+        int maxArea = 0;
+        const int n = heights.size();
+
+        for (int i = 0; i <= n; ++i) {
+            int h = (i == n) ? 0 : heights[i];
+
+            // Process the stack for all heights taller than the current
+            while (!st.empty() && h < heights[st.top()]) {
+                int height = heights[st.top()];
+                st.pop();
+                int width = st.empty() ? i : i - st.top() - 1;
+                maxArea = max(maxArea, height * width);
+            }
+
+            st.push(i);
+        }
+
+        return maxArea;
     }
 };

@@ -28,7 +28,7 @@ int main() {
 
 
   //top element
-  cout << st.top() << endl;
+  cout << st.top() << endl; // In stack, top() can used to read/write the top element.
 
 
   return 0;

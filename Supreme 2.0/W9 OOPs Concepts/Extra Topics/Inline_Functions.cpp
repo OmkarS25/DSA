@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-void printNum(int num){
+inline void printNum(int num){
     wcerr << num << "\n";
     cout << num*2 << "\n";
     cout << num*3 << "\n";

@@ -59,48 +59,54 @@ int canCompleteCircuit(vector<int> &gas, vector<int> &cost)
             balance = 0;
         }
     }
-    if (balance - deficit >= 0)
-        return start;
-    else
-        return -1;
+    // if (balance - deficit >= 0)
+    //     return start;
+    // else
+    //     return -1;
+    return (balance - deficit >= 0) ? start : -1; // My changes
 }
 
-// Question 3:Sliding windows Maximum
+// Question 3:Sliding windows Maximum Leetcode->239
 vector<int> maxSlidingWindow(vector<int> &nums, int k)
 {
     vector<int> ans;
     deque<int> dq;
     int size = nums.size();
-    // first window process till k size
+    // Step-1 first window process till k size
     for (int i = 0; i < k; i++)
     {
-        int ele = nums[i];
-        // push elements in the queue and remove chote vale elements
-        while (!dq.empty() && ele > nums[dq.back()])
+        int element = nums[i];
+        // chotte elements ko pop kardo
+        while (!dq.empty() && element > nums[dq.back()])
         {
             dq.pop_back();
         }
+        // new max index ko insert kardo
         dq.push_back(i);
     }
 
-    // processs the remaining window Removal and Insertion
+    // Step-2 remaining window ko process karlo
+    //     answer ko store karlo
+    //     removal
+    //     addition of new max index
     for (int i = k; i < size; i++)
     {
 
         ans.push_back(nums[dq.front()]);
 
-        // remove
-        if (i - dq.front() >= k)
-            dq.pop_front();
-        int ele = nums[i];
-        // push elements in the queue and remove chote vale elements
-        while (!dq.empty() && ele > nums[dq.back()])
+        // Removal of out of range elements
+        if (i - dq.front() >= k) dq.pop_front();
+        int element = nums[i];
+        // chotte elements ko pop kardo
+        while (!dq.empty() && element > nums[dq.back()])
         {
             dq.pop_back();
         }
+        // addition of new max index
         dq.push_back(i);
     }
-    // handle last window
+    
+    // Step-3 last window ka answer store kardo
     ans.push_back(nums[dq.front()]);
 
     return ans;

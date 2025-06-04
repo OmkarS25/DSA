@@ -9,6 +9,9 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
+// Path Sum II (LC - 113)
+
 class Solution {
 public:
     void solve(TreeNode* root, int targetSum, vector<vector<int>> &ans, vector<int> temp, int sum) {
@@ -36,6 +39,7 @@ public:
         solve(root->left, targetSum, ans, temp, sum);
         solve(root->right, targetSum, ans, temp, sum);
     }
+    
     vector<vector<int>> pathSum(TreeNode* root, int targetSum) {
         vector<vector<int>> ans;
         vector<int> temp;

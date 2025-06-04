@@ -9,6 +9,9 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
+// Path Sum (Leetcode-112)
+
 class Solution {
 public:
     bool solve(TreeNode* root, int targetSum, int sum ){

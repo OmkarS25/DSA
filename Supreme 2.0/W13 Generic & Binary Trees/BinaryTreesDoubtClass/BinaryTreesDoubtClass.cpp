@@ -1,3 +1,4 @@
+// This class was taken in Week 14.
 #include <iostream>
 #include <queue>
 using namespace std;

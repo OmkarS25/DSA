@@ -47,3 +47,49 @@ public:
         return false;
     }
 };
+
+// Trying to solve the problem with a different approach using two stacks
+class Solution2{
+public:
+    bool findTarget(TreeNode* root, int k) {
+        if(root == NULL) return false;
+
+        // Using while loop to traverse the BST
+        stack<TreeNode*> s1, s2;
+        TreeNode* curr1 = root;
+        TreeNode* curr2 = root; 
+
+        while(true) {
+            // Traverse the left subtree of curr1
+            while(curr1 != NULL) {
+                s1.push(curr1);
+                curr1 = curr1->left;
+            }
+            // Traverse the right subtree of curr2
+            while(curr2 != NULL) {
+                s2.push(curr2);
+                curr2 = curr2->right;
+            }
+
+            if(s1.empty() || s2.empty()) break;
+
+            TreeNode* leftNode = s1.top();
+            TreeNode* rightNode = s2.top();
+
+            // If both pointers meet, we have traversed the entire tree
+            if(leftNode == rightNode) break;
+
+            int sum = leftNode->val + rightNode->val;
+            if(sum == k) return true;
+            else if(sum < k) {
+                s1.pop();
+                curr1 = leftNode->right; // Move to the right subtree
+            } else {
+                s2.pop();
+                curr2 = rightNode->left; // Move to the left subtree
+            }
+        }
+        return false;
+    }
+
+};

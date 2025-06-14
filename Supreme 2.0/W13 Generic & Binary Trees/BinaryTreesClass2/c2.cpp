@@ -1,12 +1,12 @@
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */
+#include <cstddef> // for NULL
+
+// Definition for a binary tree node.
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
 
 // Lowest Common Ancestor of a Binary Tree
 // Leetcode-236
@@ -31,5 +31,20 @@ public:
         else if(leftAns != NULL && rightAns == NULL) return leftAns;
         else if(leftAns == NULL && rightAns != NULL) return rightAns;
         else return root;
+    }
+};
+
+// Optimized version
+class Solution2 {
+public:
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        if (!root || root == p || root == q) return root;
+        TreeNode* left = lowestCommonAncestor(root->left, p, q);
+        if (left && left != p && left != q) return left; // Found LCA in left subtree, return immediately
+        TreeNode* right = lowestCommonAncestor(root->right, p, q);
+        if (left && right) return root;
+        if (!left && !right) return NULL; // If both are NULL, return NULL
+        // If one of them is NULL, return the other one
+        return left ? left : right;
     }
 };

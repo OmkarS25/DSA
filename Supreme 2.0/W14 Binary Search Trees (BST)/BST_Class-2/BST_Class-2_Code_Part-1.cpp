@@ -204,7 +204,7 @@ Node* deleteFromBST(Node* root, int target) {
 	return root;
 }
 
-
+// In this class-2
 Node* bstFromInorder(int inorder[], int s, int e) {
 	//base case
 	if(s > e) {

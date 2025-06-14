@@ -182,6 +182,7 @@ Node* deleteFromBST(Node* root, int target) {
 		}
 		//4 case -> left NON NULL && right NON NULL
 		else {
+			// Method 1- Max Value from LST
 			//a -> left subtree ki max value lao
 			Node* maxi = maxValue(root->left);
 			//replacement
@@ -190,6 +191,12 @@ Node* deleteFromBST(Node* root, int target) {
 			//delete actual maxi wali node
 			root->left = deleteFromBST(root->left, maxi->data);
 			return root;
+
+			// Method 2- Min Value from RST
+			// Node* mini = minValue(root->right);
+			// root->data = mini->data;
+			// root->right = deleteFromBST(root->right, mini->data);
+			// return root;
 		}
 	}
 	else if(root->data > target) {
